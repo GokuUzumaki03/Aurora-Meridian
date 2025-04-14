@@ -1,7 +1,4 @@
-# Aurora-Meridian
-
-Aurora Meridian Demo Code
-
+Aurora Meridian FIXED Code
 import java.util.*;
 
 public class MergedGame {
@@ -104,12 +101,17 @@ public class MergedGame {
             System.out.println("2. Haggle (Charisma)");
             System.out.println("3. Analyze risks (Intelligence)");
             int choice = scanner.nextInt();
-            if (choice == 1 && player.getSkill("Firearms") > 5)
-                System.out.println("You identify key weapons including a white phosphorus grenade.");
+            if (choice == 1) {
+                if (player.getSkill("Firearms") > 5) {
+                    System.out.println("You identify key weapons including a white phosphorus grenade.");
+                } else {
+                    System.out.println("You don't recognize anything special.");
+                }
+            }
             if (choice == 2 && player.getSkill("Charisma") > 5)
                 System.out.println("You negotiate a better deal.");
             if (choice == 3 && player.getSkill("Intelligence") > 5)
-                System.out.println("You sense Ellison’s desperation and hidden motives.");
+                System.out.println("You sense Ellison's desperation and hidden motives.");
             mission5();
         }
 
